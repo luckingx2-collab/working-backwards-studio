@@ -23,3 +23,13 @@ Settings → Pages → Deploy from a branch → main / (root). 빌드 도구나 
 
 ## 브랜드 및 외부 구성요소
 ETEVERS CI는 https://group.etevers.com/kor/about/ci.html 의 자료를 사용했습니다. 브랜드 자산과 모델·라이브러리는 각 권리자의 조건을 따릅니다. 이 저장소가 브랜드 자산에 대한 별도 재사용 권리를 부여하지 않습니다.
+
+## T8 실제 만화 이미지 생성
+- 공개 모델: FLUX.1 schnell (Apache 2.0), 제작사 공식 Space: https://huggingface.co/spaces/black-forest-labs/FLUX.1-schnell
+- 클라이언트: @gradio/client 2.7.2, 공식 /infer API.
+- 공통 인물 묘사와 6컷 설명을 입력하고 외부 전송에 동의한 뒤 생성합니다. 이 세 가지 항목만 전송합니다.
+- Hugging Face 토큰은 선택 사항이며 탭 메모리에서만 사용합니다. 서버·JSON·로컬 저장소에 기록하지 않습니다.
+- 무료 데모의 할당량·대기열·로그인 제한이 있으며 무제한 무료 서비스가 아닙니다. 유료 API로 자동 전환하지 않습니다.
+- 이미지들은 브라우저 IndexedDB에 보관하며 JSON 백업에는 포함되지 않습니다. PNG 또는 시각 보고서 HTML로 보관하세요.
+- 공식 생성기에서 만든 그림을 컷별로 가져올 수도 있습니다.
+- 2026-11-10 검증: API 연결 후 ZeroGPU quota exceeded 오류 확인. 실제 이미지 추론 성공은 미검증입니다. 이미지 저장·새로고침 복원·6컷 PNG 내보내기는 단색 테스트 이미지로 검증했습니다.
